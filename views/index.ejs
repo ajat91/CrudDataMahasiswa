@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <!-- <form action='/' method='post'>
+        <div class="container col-md-4">
+            <div>
+                <div>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Nama</th>
+                            <td><input type='text' name='nama' required/></td>
+                        <tr>
+                        <tr>
+                            <th>Alamat</th>
+                            <td><input type='text' name='alamat' required/></td>
+                        <tr>
+                            <th>No HP</th>
+                            <td><input type='text' name='nohp' required/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"  align="center">
+                                <button type='submit' onClick='alert("Data Berhasil Ditambahkan")' class="btn btn-success">Tambahkan</button>
+                            </td>                
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br><br><br> -->
+   <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-8">
+                <table  class="table table-striped" >
+                    <tr>
+                        <td colspan="2"><h4 align="center">Daftar Mahasiswa</h4></td>
+                   
+                        <td>
+                            <a href='/tambah'>
+                                <button class="btn btn-success">Tambah Data Mahasiswa</button>
+                            </a> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nama</th>
+                        <th>NPM</th>
+                        <th colspan="3" align="center">Action</th>
+                    </tr>
+                    <% mahasiswa.forEach((mhs,index)=>{%>
+                    <tr>
+                        <td><%= mhs.nama%></td>
+                        <td><%= mhs.npm%></td>
+                        <td>
+                            <a href='/<%= mhs.id %>/detail'>
+                                <button class="btn btn-primary">Detail Mahasiswa</button>
+                            </a>
+                            <a href='/<%= mhs.id%>/edit'>
+                                <button class="btn btn-secondary">Edit Data</button>
+                            </a> 
+                            <a href='/<%= mhs.id%>/delete'>
+                                <button onClick='alert("Data Berhasil Dihapus")'  class="btn btn-danger">Hapus Data</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <%})%>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
